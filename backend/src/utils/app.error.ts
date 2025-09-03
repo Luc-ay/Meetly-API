@@ -30,6 +30,16 @@ export class InternalServerException extends AppError {
   }
 }
 
+export class HttpException extends AppError {
+  constructor(
+    message: 'Http Exception Error',
+    statusCode: HttpStatusCodeType,
+    errorCode?: ErrorCodeEnumType
+  ) {
+    super(message, statusCode, errorCode)
+  }
+}
+
 export class BadRequestException extends AppError {
   constructor(message = 'Bad Request', errorCode?: ErrorCodeEnumType) {
     super(
